@@ -4,21 +4,17 @@
 
 public class Test {
     public static void main(String[] args) {
+        // Double, Float, Long, Short, Byte, Character и Boolean
 
-        byte a = 123;
-        int b = 123;
-        long c = 123456789123L; // по умолчанию int, добавляем L в конце
-        float d = 123.45f; // по умолчанию double, нужно добавить f или F в конце
-        double e = 123.45;
+        // упаковка в класс-обертку
+        Integer x = new Integer(123); // предупреждение, лучше сокращенная запись
+        Integer x2 = 123; // сокращенная запись
 
-        long k = 123456789; // неявное приведение типов
-        int l = (int)k; // явное приведелине типов
+        // распаковка упакованного
+        int y = x2;
 
-        float m = (float)123.4; // явное приведение типов
-
-        double n = 123.8;
-        int p = (int)n; // 123, дробная часть отбрасывается
-
-        byte x = (byte) 129; // -127. приводимое число слишком большое для byte
+        // после написания x. - открывается список доступных методов
+        // здесь преобразуем int в double
+        System.out.println(x.doubleValue());
     }
 }
