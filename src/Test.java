@@ -4,17 +4,26 @@
 
 public class Test {
     public static void main(String[] args) {
-        // Double, Float, Long, Short, Byte, Character и Boolean
 
-        // упаковка в класс-обертку
-        Integer x = new Integer(123); // предупреждение, лучше сокращенная запись
-        Integer x2 = 123; // сокращенная запись
+        // Upcasting - восходящее преобразование
+        // Animal animal = new Dog();
 
-        // распаковка упакованного
-        int y = x2;
+        Dog dog = new Dog();
+        // Upcasting - восходящее преобразование
+        Animal animal = dog;
 
-        // после написания x. - открывается список доступных методов
-        // здесь преобразуем int в double
-        System.out.println(x.doubleValue());
+        // Douncasting - нисходящее преобразование
+        Dog dog2 = (Dog) animal;
+        dog2.eat();
+        dog2.bark();
+        /** вывод
+         *
+         * Animal is eating..
+         * Dog is barking..
+         */
+
+        Animal a = new Animal();
+        Dog d = (Dog) a;
+        d.bark(); // ошибка, так делать нельзя
     }
 }
