@@ -1,16 +1,30 @@
-import Package1.Person;
-
 /**
- * Created by i2gan on 15.02.2023
+ * Created by i2gan on 17.02.2023
  */
 
-// класс может быть только public или default
-public class Test extends Person {
-    // public  доступен во всем проекте
-    // private доступен только внутри класса
-    // без модификатора по умолчанию default доступен только внутри пакета
-    // protected доступен в подклассах во всем проекте
-    public Test() {
-        name = "Tom";
+public class Test {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+
+        test(animal);
+        test(dog);
+        test(cat);
+        /* вывод:
+        Animal is eating...
+        Dog is eating..
+        Animal is eating...
+         */
+    }
+    /*
+     * с помощью полиморфизма мы вызываем метод
+     * test() для объектов трех разных классов:
+     * одного родителя и двух потомков, в одном из
+     * которых метод переопределен, в другом нет метода
+     * вообще
+     */
+    public static void test(Animal animal) {
+        animal.eat();
     }
 }
