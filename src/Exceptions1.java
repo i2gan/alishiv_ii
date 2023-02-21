@@ -9,22 +9,18 @@ import java.util.Scanner;
 public class Exceptions1 {
     public static void main(String[] args) {
         /*
-         * после того, как мы напечатали две строки, что ниже
-         *
-         * File file = new File("asdf");
-         * Scanner scanner = new Scanner(file);
-         *
          * появляются предложения обработки исключений. Желательно
-         * выбрать try-catch
+         * выбрать в "More actions" "try-catch"
          */
-        File file = new File("asdf");
         try {
-            Scanner scanner = new Scanner(file);
-            System.out.println("In block try");
+            readFile();
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            System.out.println("Обработка исключений в методе main");
         }
+    }
 
-        System.out.println("After block try catch");
+    public static void readFile() throws FileNotFoundException {
+        File file = new File("asdf");
+        Scanner scanner = new Scanner(file);
     }
 }
