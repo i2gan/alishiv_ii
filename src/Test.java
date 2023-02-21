@@ -7,26 +7,28 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        //////////////// до Java 5 ///////////////
-        List animals = new ArrayList();
-        animals.add("cat");
-        animals.add("dog");
-        animals.add("frog");
+        List<Animal> listOfAnimals = new ArrayList<>();
+        listOfAnimals.add(new Animal(1));
+        listOfAnimals.add(new Animal(2));
 
-        // делаем downcast
-        String animal = (String) animals.get(1);
-        System.out.println(animal);
+        List<Dog> listOfDogs = new ArrayList<>();
+        listOfDogs.add(new Dog());
+        listOfDogs.add(new Dog());
 
-        // с появлением дженериков (jenerics)//
-        List<String> animals2 = new ArrayList<String>();
-        animals2.add("cat");
-        animals2.add("dog");
-        animals2.add("frog");
+        test(listOfAnimals);
+        test(listOfDogs);
+    }
 
-        String animal2 = animals2.get(1);
-
-        /////////// Java 7 /////////////////////////
-        List<String> animal3 = new ArrayList<>();
-
+    /*
+     * Object
+     *     Animal
+     *         Dog
+     *
+     * <? extends Animal> подразумевает Animal и наследники (здесь Dog)
+     * <? super Animal> подразумеваем Animal и родители (здесь Object)
+     */
+    private static void test(List<? extends Animal> list) {
+        for (Animal animal: list)
+            animal.eat();
     }
 }
