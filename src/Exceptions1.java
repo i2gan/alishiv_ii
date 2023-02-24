@@ -20,7 +20,7 @@ public class Exceptions1 {
     }
 
     public static void readFile() throws FileNotFoundException {
-        File file = new File("asdf");
+        File file = new File("checkGit");
         Scanner scanner = new Scanner(file);
     }
 }
